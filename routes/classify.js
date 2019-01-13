@@ -3,7 +3,9 @@ var router = express.Router();
 var classify = require("./classify_api/index.js");
 
 /* GET home page. */
-router.post('/api/classify', classify.addclassify); //增加分类
+router.post('/api/addclassify', classify.addclassify); //增加分类
+router.post('/api/findclassify', classify.findclassify); //增加分类
+
 
 
 

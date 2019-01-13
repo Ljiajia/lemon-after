@@ -28,12 +28,13 @@ function getBill(req, res, next) {
 // }
 //添加账单
 function addBill(req, res, next) {
+    console.log(req.body)
     var uid = req.body.uid; //用户id
     var icon = req.body.icon; //icon图标
     var type = req.body.type; //0支出 1收入
     var money = req.body.money; //金额
     var cid = req.body.cid; //分类
-    var timer = new Date().toLocaleString().split(' ')[0]; //消费时间
+    var timer = req.body.timer; //消费时间
     if (!uid || !icon || !type || !money || !cid || !timer) {
         return res.json({ code: 3, msg: "丢失参数" })
     }

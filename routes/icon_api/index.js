@@ -14,6 +14,17 @@ function addicon(req, res, next) { //添加icon
         }
     })
 }
+
+function findicon(req, res, next) { //添加icon
+    mymongo.find("iconlist", function(err, result) {
+        if (err) {
+            return res.json({ code: 0, msg: err })
+        } else {
+            res.json({ code: 1, msg: result })
+        }
+    })
+}
 module.exports = {
-    addicon: addicon
+    addicon: addicon,
+    findicon: findicon
 }
